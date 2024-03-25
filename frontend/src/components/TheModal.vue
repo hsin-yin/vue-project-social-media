@@ -34,8 +34,8 @@ import PostActions from "./PostActions.vue";
     transform: translate(-50%, -50%);
     background-color: white;
     z-index: 20;
-    width: 75%;
-    height: 85%;
+    width: 70vw;
+    height: 65vh;
 }
 .closeBtn {
     position: absolute;
