@@ -7,7 +7,7 @@
             </label>
             <div class="postContent">
                 <textarea class="postContentInput" placeholder="撰寫貼文..."></textarea>
-                <button class="pubBtn button">發布</button>
+                <TheButton class="pubBtn">發布</TheButton>
             </div>
         </div>
     </TheModal>
@@ -16,9 +16,12 @@
 <script setup>
 import TheModal from "./TheModal.vue";
 import TheIcon from "./TheIcon.vue";
+import TheButton from "./TheButton.vue"
+// 
 </script>
 
 <style>
+/*  */
 .postUpload {
     width: 100%;
     height: 100%;
@@ -54,17 +57,8 @@ import TheIcon from "./TheIcon.vue";
     resize: none;
     padding: 12px 24px;
 }
-
 .postContentInput::placeholder {
     color: #757575;
-}
-.button {
-    border-radius: 8px;
-    padding: 10px 32px;
-    border: none;
-    color: white;
-    font-size: 16px;
-    background: #1da0ff;
 }
 .pubBtn {
     align-self: end;
