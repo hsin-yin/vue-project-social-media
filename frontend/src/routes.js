@@ -3,8 +3,7 @@ import ProfilePage from "./pages/ProfilePage.vue";
 import ProfileEdittingPage from "./pages/ProfileEdittingPage.vue";
 import SearchPage from "./pages/SearchPage.vue";
 import LoginPage from "./pages/LoginPage.vue";
-import { createRouter } from "../node_modules/vue-router/dist/vue-router";
-import { createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
     {
