@@ -10,7 +10,7 @@
     <template v-else>
         <router-view></router-view>
     </template>
-    <footer class="footer" :class="{inside: $route.name === login}">
+    <footer class="footer" :class="{inside: $route.name === 'login'}">
         &copy;Fenghua. All Rights Reserved.
     </footer>
 </template>
