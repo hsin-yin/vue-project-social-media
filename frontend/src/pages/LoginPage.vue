@@ -10,7 +10,7 @@
                 <div v-if="!isLogin" class="agreement">
                     <input type="checkbox" name="" id="" v-model="agreementChecked">是否同意隱私權協議和使用規範
                 </div>
-                <button class="loginButton" @click="register()" type="submit">{{isLogin ? "登錄": "註冊"}}</button>
+                <button class="loginButton" @click="isLogin ? login() : register()" type="submit">{{isLogin ? "登錄": "註冊"}}</button>
                 <p class="info" @click="isLogin =!isLogin">{{isLogin ? "還沒有帳號？ 點擊註冊" : "已有帳號？ 點擊登錄"}}</p>
             </form>
         </div>
@@ -39,6 +39,13 @@ async function register() {
   await store.dispatch("registerUser", {
     email: email.value,
     username: username.value,
+    password: password.value,
+  })
+  router.replace("/");
+}
+async function login() {
+  await store.dispatch("loginUser", {
+    email: email.value,
     password: password.value,
   })
   router.replace("/");
