@@ -3,7 +3,9 @@
         <div class="modal">
             <div class="backdrop"></div>
             <div class="modalContent">
-                <button class="closeBtn"><TheIcon icon="close"/></button>
+                <button class="closeBtn" @click="$emit('close')">
+                    <TheIcon icon="close"/>
+                </button>
                 <slot></slot>
             </div>
         </div>
@@ -14,6 +16,8 @@
 import TheIcon from "./TheIcon.vue";
 import TheAvatar from "./TheAvatar.vue";
 import PostActions from "./PostActions.vue";
+
+defineEmits(["close"]);
 </script>
 
 <style scoped>
@@ -44,10 +48,14 @@ import PostActions from "./PostActions.vue";
     width: 28px;
     height: 28px;
     border: 0;
+    border-radius: 50%;
     background-color: white;
 }
 .closeBtn svg {
     height: 100%;
     width: 100%;
+    position: relative;
+    top: 2px;
+    left: 2px;
 }
 </style>
