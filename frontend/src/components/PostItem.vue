@@ -1,17 +1,16 @@
 <template>
     <div class="postItem">
-        <img src="" alt="" width="100%" height="100%" style="background: #eee">
+        <img :src="post.image" alt="" width="100%" height="100%" style="background: #eee">
             <div class="postInfo">
                 <div class="postMeta">
-                    <TheAvatar />
-                    <span>珊迪</span>
-                    <span class="postPubDate">12 小時前發布</span>
+                    <TheAvatar :src="post?.user?.avatar"/>
+                    <span>{{ post?.user?.name }}</span>
+                    <span class="postPubDate">{{ dateToRelative(post.publishedAt) }}</span>
                     <PostActions />
                 </div>
                 <div class="postDesc">
                     <p>
-                        這是樹這是樹這是樹這是樹這是樹這是樹這是樹這是樹這是樹這是樹這是樹這是樹這是樹
-                        #植物#樹#樹葉#綠色#特別長#的#標籤
+                        {{ post.description }}
                     </p>
                 </div>
             </div>
@@ -21,6 +20,9 @@
 <script setup>
 import TheAvatar from '../components/TheAvatar.vue';
 import PostActions from "../components/PostActions.vue";
+import {dateToRelative} from "../utils/date";
+
+defineProps(["post"])
 </script>
 
 <style scoped>
