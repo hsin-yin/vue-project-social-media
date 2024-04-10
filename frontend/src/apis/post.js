@@ -14,6 +14,7 @@ export async function createPost(image, description) {
         }
     })
 }
+
 export async function loadPosts() {
     const response = await request("/api/posts?populate=*");
 
@@ -26,4 +27,18 @@ export async function loadPosts() {
             ...post?.attributes?.user?.data?.attributes,
         },
     }));
+}
+
+export async function likePost(id) {
+    const response = await request(`/api/posts/${id}/like`, {
+        method: "PUT",
+    })
+    return response.data;
+}
+
+export async function favorPost(id) {
+    const response = await request(`/api/posts/${id}/favor`, {
+        method: "PUT",
+    })
+    return response.data;
 }
