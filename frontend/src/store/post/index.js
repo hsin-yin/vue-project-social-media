@@ -4,6 +4,7 @@ export const post = {
     state() {
         return {
             list: [],
+            currentId: null,
         }
     },
     mutations: {
@@ -27,6 +28,9 @@ export const post = {
                 post.favored_bies--;
             }
             post.favoredByMe = isFavor;
+        },
+        setCurrentId(state, id) {
+            state.currentId = id;
         }
     },
     actions: {
@@ -46,6 +50,19 @@ export const post = {
         async toggleFavor({ commit }, id) {
             const isFavor = await favorPost(id);
             commit("toggleFavor", { id, isFavor })
+        },
+        async showPostDetails({commit}, id) {
+            commit("setCurrentId", id)
+            commit("changeShowPostDetails", true);
+        },
+        async hidePostDetails({commit}) {
+            commit("setCurrentId", null);
+            commit("changeShowPostDetails", false);
+        }
+    },
+    getters: {
+        postDetails(state) {
+            return state.list.find((post) => post.id === state.currentId);
         }
     }
 }
