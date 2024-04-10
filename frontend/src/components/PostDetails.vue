@@ -9,6 +9,7 @@
             </div>
             <pre class="postDesc">{{ post.description }}
             </pre>
+            <!-- 評論列表還沒修改 -->
             <div class="comments">
                 <div class="comment" v-for="n in 8">
                     <TheAvatar />
