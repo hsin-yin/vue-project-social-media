@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="profileContainer">
-            <TheAvatar class="avatar" width="186" height="186"></TheAvatar>
+            <TheAvatar class="avatar" :width="186" :height="186"></TheAvatar>
             <div class="profile">
                 <p class="name">
                     <span>珊迪</span>
