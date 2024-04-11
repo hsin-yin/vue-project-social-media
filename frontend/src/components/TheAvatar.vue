@@ -24,5 +24,7 @@ defineProps({
     height: v-bind(height + "px");
     background: #eee;
     border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
 }
 </style>
