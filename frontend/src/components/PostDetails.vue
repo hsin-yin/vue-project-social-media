@@ -29,8 +29,8 @@
               @favorClick="$store.dispatch('toggleFavor', post.id)"
               />
               <span class="postPubDate">{{ dateToRelative(post.publishedAt) }}</span>
-              <input type="text" name="comment" id="" class="commentInput" placeholder="留言">
-              <button class="commentPubBtn">發布</button>
+              <input type="text" name="comment" id="" class="commentInput" placeholder="留言" v-model="content">
+              <button @click="store.dispatch('addComment', {content, postId: post.id})" class="commentPubBtn">發布</button>
             </div>
         </div>
     </div>
@@ -44,8 +44,9 @@ import PostActions from "./PostActions.vue";
 import TheModal from "./TheModal.vue";
 import {dateToRelative} from "../utils/date";
 import {useStore} from "vuex";
-import {computed} from "vue";
+import {computed, ref} from "vue";
 
+const content = ref("");
 const store = useStore();
 const post = computed(() => store.getters.postDetails);
 </script>

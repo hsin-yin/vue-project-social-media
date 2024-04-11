@@ -31,6 +31,10 @@ export const post = {
         },
         setCurrentId(state, id) {
             state.currentId = id;
+        },
+        increaseCommentCount(state, postId) {
+            const post = state.list.find(post => post.id === postId);
+            post.comments++;
         }
     },
     actions: {
