@@ -61,6 +61,8 @@ defineProps({
         "pubDate pubDate actions";
     grid-template-columns: 42px 1fr 3fr;
     row-gap: 6px;
+    column-gap: 4px;
+    align-items: center;
 }
 .postMeta .avatar {
     grid-area: avatar;

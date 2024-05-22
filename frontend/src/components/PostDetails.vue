@@ -69,8 +69,6 @@ const comments = computed(() => store.state.comment.list);
     transform: translate(-50%, -50%);
     background-color: white;
     z-index: 20;
-    width: 75%;
-    height: 85%;
 }
 .closeBtn {
     position: absolute;

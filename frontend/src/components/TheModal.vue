@@ -39,7 +39,7 @@ defineEmits(["close"]);
     background-color: white;
     z-index: 20;
     width: 70vw;
-    height: 65vh;
+    height: 78vh;
 }
 .closeBtn {
     position: absolute;
